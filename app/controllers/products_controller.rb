@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
+  # %i in ruby is a shortcut for an array of symbols 
+  # before_action is a method that takes a method name as a symbol and a hash of options
 
   # GET /products or /products.json
   def index
@@ -13,6 +15,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    # @product is an instance variable, which is available to the view 'new.html.erb', Product.new is a new instance of the Product model
   end
 
   # GET /products/1/edit
