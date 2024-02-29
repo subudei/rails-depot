@@ -24,6 +24,8 @@ class LineItemsController < ApplicationController
   # POST /line_items or /line_items.json
   def create
     product = Product.find(params[:product_id])
+    # params in find methiod is built-in method in Rails that is used to get the value of a parameter sent to the controller. In this case, it is used to get the value of the product_id parameter sent to the controller. params[:product_id] is found in url: http://localhost:3000/products/1
+
     @line_item = @cart.line_items.build(product: product)
 
     respond_to do |format|
